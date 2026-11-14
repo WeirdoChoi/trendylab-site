@@ -753,5 +753,10 @@ f.innerHTML=x+'<div class="done" role="status"><b>'+(mode==='profile'?'회사소
 
 document.addEventListener('click',e=>{if(e.target.closest('[data-pv]')){const d=document.getElementById('dlg');if(d&&d.open)d.close()}});
 
+/* 히어로 영상·이미지 저장 막기: 오른쪽 클릭 메뉴와 끌어서 저장 차단 */
+(function(){var h=document.querySelector('.hero');if(!h)return;
+['contextmenu','dragstart'].forEach(function(ev){h.addEventListener(ev,function(e){e.preventDefault();});});
+h.querySelectorAll('video').forEach(function(v){v.setAttribute('controlsList','nodownload noplaybackrate');v.setAttribute('disablePictureInPicture','');});})();
+
 </script>
 </body></html>
