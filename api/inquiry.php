@@ -55,9 +55,9 @@ if (!empty($cfg['mail_to'])) {
         . "이메일: " . $r['e'] . "\n"
         . "관심 서비스: " . implode(', ', $r['s']) . "\n\n"
         . "문의 내용:\n" . $r['m'] . "\n";
-    $from = 'no-reply@trendylab.co.kr';
-    $h = "MIME-Version: 1.0\r\nContent-Type: text/plain; charset=UTF-8\r\nContent-Transfer-Encoding: base64\r\n"
-        . "From: =?UTF-8?B?" . base64_encode('트랜디랩 홈페이지') . "?= <" . $from . ">\r\n";
+    // No From header on purpose: mail claiming a trendylab.co.kr sender from this server is dropped by the
+    // recipient's mail service, while the server's own default sender is delivered (tested 2026-11-15).
+    $h = "MIME-Version: 1.0\r\nContent-Type: text/plain; charset=UTF-8\r\nContent-Transfer-Encoding: base64\r\n";
     if ($r['e'] !== '') { $h .= "Reply-To: " . $r['e'] . "\r\n"; }
     $sent = @mail($cfg['mail_to'], '=?UTF-8?B?' . base64_encode($subject) . '?=', chunk_split(base64_encode($body)), $h);
 }
