@@ -411,6 +411,21 @@ form .done span{color:#444;font-size:15px}
 @media (max-width:1040px){.adg{grid-template-columns:1fr}.add{position:static}}
 @media (max-width:640px){.adt button,.adt .hdr{grid-template-columns:1fr 84px}.adt .no,.adt .dt{display:none}.add{padding:22px}}
 
+/* admin: login form, type tag, delete link */
+.adl_{max-width:420px;display:grid;gap:14px}
+.adl_ label{display:grid;gap:8px;font-size:14px;color:var(--g)}
+.adl_ input{height:52px;border:1px solid var(--k);padding:0 16px;font-size:16px;background:#fff;width:100%}
+.adl_ input:focus{box-shadow:none;outline:2px solid var(--k);outline-offset:1px}
+.adl_ .btn{height:52px;justify-content:center;justify-self:start;min-width:132px}
+.adl_ small{font-size:13px;color:var(--g);min-height:1.7em}
+.tg_{display:inline-block;margin-left:8px;padding:2px 8px;border:1px solid var(--k);font-size:11px;font-weight:500;line-height:1.5;vertical-align:2px;white-space:nowrap}
+.tg_.p{background:var(--k);color:#fff}
+.add h3 .tg_{vertical-align:5px;letter-spacing:0}
+.add dd{word-break:break-all}
+.add .m_{white-space:pre-wrap;word-break:break-word}
+.add .del_{background:none;border:0;padding:0;font-size:13px;color:var(--g);text-decoration:underline;text-underline-offset:3px;justify-self:start;cursor:pointer}
+.adt .emp_{margin:0;padding:48px 8px;color:var(--g);font-size:15px;border-bottom:1px solid var(--line)}
+
 .ic{display:inline-flex;align-items:center;gap:14px}
 .ic svg{width:30px;height:30px;display:block;flex:0 0 auto}
 .ai > button{grid-template-columns:120px 1fr auto auto}
@@ -805,11 +820,8 @@ svg.li{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.5;str
 </div>
 <!-- ADMIN -->
 <div class="page" data-page="admin" hidden>
-<section class="w ph1" style="padding-bottom:56px"><span class="lab">Admin</span><h1>문의 내역</h1><p>관리자로 로그인했을 때만 보이는 화면입니다. 방문자에게는 메뉴와 주소 모두 보이지 않습니다.</p></section>
-<section class="w adm"><p class="adn">시안 화면입니다. 아래 목록은 화면 구성을 보여주기 위한 예시이며 실제 문의가 아닙니다. 실제 사이트에서는 문의가 접수될 때마다 관리자 회사메일로 알림이 발송됩니다.</p>
-<div class="bar"><div class="fl" role="group" aria-label="상태"><button type="button" aria-pressed="true">전체 4</button><button type="button" aria-pressed="false">새 문의 2</button><button type="button" aria-pressed="false">상담 중 1</button><button type="button" aria-pressed="false">완료 1</button></div><div class="who"><span>관리자 <b>자현</b></span><a class="btn o" style="height:38px;padding:0 16px;font-size:13px" href="#home">로그아웃</a></div></div>
-<div class="adg"><div class="adt" id="adt"><div class="hdr"><span class="no">번호</span><span>브랜드 · 관심 서비스</span><span class="dt">접수일</span><span>상태</span></div><button type="button" aria-selected="true" data-b="예시 브랜드 A" data-s="카페 침투 · 체험단" data-d="2026.11.14" data-n="김담당" data-m="신제품 출시에 맞춰 맘카페 바이럴과 체험단을 같이 진행하고 싶습니다. 일정과 견적 문의드립니다." data-st="새 문의"><span class="no dt">12</span><span><b>예시 브랜드 A</b><span class="sv_">카페 침투 · 체험단</span></span><span class="dt">2026.11.14</span><span class="stt new">새 문의</span></button><button type="button" aria-selected="false" data-b="예시 브랜드 B" data-s="네이버 SEO" data-d="2026.11.13" data-n="이담당" data-m="브랜드 키워드 검색 결과 관리가 필요합니다." data-st="새 문의"><span class="no dt">11</span><span><b>예시 브랜드 B</b><span class="sv_">네이버 SEO</span></span><span class="dt">2026.11.13</span><span class="stt new">새 문의</span></button><button type="button" aria-selected="false" data-b="예시 브랜드 C" data-s="인스타그램 · 유튜브" data-d="2026.11.12" data-n="박담당" data-m="인스타그램 인기 게시물과 유튜브 숏츠 진행 가능 여부를 알고 싶습니다." data-st="상담 중"><span class="no dt">10</span><span><b>예시 브랜드 C</b><span class="sv_">인스타그램 · 유튜브</span></span><span class="dt">2026.11.12</span><span class="stt ">상담 중</span></button><button type="button" aria-selected="false" data-b="예시 브랜드 D" data-s="커뮤니티" data-d="2026.11.10" data-n="최담당" data-m="당근 동네생활 침투 상품 문의드립니다." data-st="완료"><span class="no dt">9</span><span><b>예시 브랜드 D</b><span class="sv_">커뮤니티</span></span><span class="dt">2026.11.10</span><span class="stt ">완료</span></button></div>
-<aside class="add" id="add"><span class="lab">Detail</span><h3 id="ad-b"></h3><dl><dt>담당자</dt><dd id="ad-n"></dd><dt>연락처</dt><dd>010-0000-0000 (예시)</dd><dt>관심 서비스</dt><dd id="ad-s"></dd><dt>접수일</dt><dd id="ad-d"></dd><dt>상태</dt><dd id="ad-st"></dd></dl><p id="ad-m"></p><div class="acts"><button type="button" class="btn f">상담 중으로 변경</button><button type="button" class="btn o">완료 처리</button></div></aside></div></section>
+<section class="w ph1" style="padding-bottom:56px"><span class="lab">Admin</span><h1>문의 내역</h1><p id="ad-lead">관리자만 볼 수 있는 화면입니다.</p></section>
+<section class="w adm" id="adm"></section>
 </div>
 <!-- PRIVACY -->
 <div class="page" data-page="privacy" hidden>
@@ -895,10 +907,35 @@ fetch('api/inquiry.php',{method:'POST',headers:{'Content-Type':'application/json
 if(bt)bt.disabled=false;say(j&&j.error==='email'?'이메일 주소를 다시 확인해 주세요.':j&&j.error==='contact'?'연락처나 이메일 중 하나는 적어 주세요.':j&&j.error==='too_many'?'잠시 후 다시 시도해 주세요.':'전송하지 못했습니다. 카카오톡으로 문의해 주세요.');})
 .catch(()=>{if(bt)bt.disabled=false;say('전송하지 못했습니다. 카카오톡으로 문의해 주세요.');});}
 $('#fm').addEventListener('submit',e=>{e.preventDefault();const f=$('#fm');tlSend(f,'project',()=>{f.innerHTML='<div class="done" role="status"><b>문의가 접수되었습니다.</b><span>확인 후 남겨주신 연락처로 답변드립니다.</span></div>';});});
-// admin
-function adSel(b){$$('#adt button').forEach(x=>x.setAttribute('aria-selected',x===b));const d=b.dataset;$('#ad-b').textContent=d.b;$('#ad-n').textContent=d.n;$('#ad-s').textContent=d.s;$('#ad-d').textContent=d.d;$('#ad-st').textContent=d.st;$('#ad-m').textContent=d.m;}
-$$('#adt button').forEach(b=>b.addEventListener('click',()=>adSel(b)));adSel($('#adt button'));
-$$('.adm .fl button').forEach(b=>b.addEventListener('click',()=>$$('.adm .fl button').forEach(x=>x.setAttribute('aria-pressed',x===b))));
+// admin: inquiry list (server: api/admin.php)
+(function(){const box=$('#adm'),lead=$('#ad-lead');if(!box)return;
+const ST={new:'새 문의',ing:'상담 중',done:'완료'};let rows=[],flt='all',sel=null,busy=false;
+const esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const api=b=>fetch('api/admin.php',{method:'POST',credentials:'same-origin',headers:{'Content-Type':'application/json','X-TL':'1'},body:JSON.stringify(b)}).then(r=>r.json().then(j=>(j.status=r.status,j)));
+const fail=()=>{lead.textContent='관리자 화면을 불러오지 못했습니다.';box.innerHTML='';};
+function gate(set,msg){lead.textContent=set?'관리자만 볼 수 있는 화면입니다. 비밀번호를 입력해 주세요.':'관리자 비밀번호를 정해 주세요. 정한 뒤에는 이 비밀번호로만 열립니다.';
+box.innerHTML='<form class="adl_" novalidate><label>'+(set?'관리자 비밀번호':'새 비밀번호 (8자 이상)')+'<input type="password" name="p" autocomplete="'+(set?'current-password':'new-password')+'"></label>'+(set?'':'<label>한 번 더 입력<input type="password" name="q" autocomplete="new-password"></label>')+'<button type="submit" class="btn f">'+(set?'로그인':'비밀번호 정하기')+'</button><small role="status">'+esc(msg||(set?'비밀번호를 5번 틀리면 10분 동안 잠깁니다.':''))+'</small></form>';
+const f=$('form',box),sm=$('small',f);f.addEventListener('submit',e=>{e.preventDefault();if(busy)return;const p=f.p.value;
+if(!set&&p.length<8){sm.textContent='8자 이상으로 정해 주세요.';return;}if(!set&&p!==f.q.value){sm.textContent='두 칸의 비밀번호가 다릅니다.';return;}
+busy=true;api({a:set?'login':'setpw',p:p}).then(j=>{busy=false;if(j.ok){load();return;}
+sm.textContent=j.error==='locked'?'여러 번 틀려서 잠겼습니다. 10분 뒤에 다시 시도해 주세요.':j.error==='wrong'?'비밀번호가 맞지 않습니다.':j.error==='already_set'?'이미 비밀번호가 정해져 있습니다. 새로 고침해 주세요.':'처리하지 못했습니다. 다시 시도해 주세요.';}).catch(()=>{busy=false;sm.textContent='처리하지 못했습니다. 다시 시도해 주세요.';});});}
+function load(){api({a:'list'}).then(j=>{if(j.ok){rows=j.rows;draw();}else go();}).catch(fail);}
+const day=s=>String(s||'').slice(0,10).replace(/-/g,'.'),tm=s=>String(s||'').slice(0,16).replace(/-/g,'.');
+const tag=r=>'<span class="tg_'+(r.mode==='profile'?' p':'')+'">'+(r.mode==='profile'?'소개서 요청':'문의')+'</span>';
+function draw(){lead.textContent='홈페이지로 들어온 문의와 회사소개서 요청이 접수 순서대로 쌓입니다.';
+const c=k=>rows.filter(r=>k==='all'||r.st===k).length,vis=rows.filter(r=>flt==='all'||r.st===flt);
+if(!vis.some(r=>r.id===sel))sel=vis.length?vis[0].id:null;const d=rows.find(r=>r.id===sel);
+box.innerHTML='<div class="bar"><div class="fl" role="group" aria-label="상태">'+[['all','전체'],['new','새 문의'],['ing','상담 중'],['done','완료']].map(x=>'<button type="button" data-f="'+x[0]+'" aria-pressed="'+(flt===x[0])+'">'+x[1]+' '+c(x[0])+'</button>').join('')+'</div><div class="who"><span>관리자 <b>자현</b></span><button type="button" class="btn o" id="ad-out" style="height:38px;padding:0 16px;font-size:13px">로그아웃</button></div></div>'+
+'<div class="adg"><div class="adt" id="adt"><div class="hdr"><span class="no">번호</span><span>브랜드 · 관심 서비스</span><span class="dt">접수일</span><span>상태</span></div>'+
+(vis.length?vis.map(r=>'<button type="button" data-id="'+esc(r.id)+'" aria-selected="'+(r.id===sel)+'"><span class="no dt">'+esc(r.no)+'</span><span><b>'+esc(r.b||r.n||'(이름 없음)')+'</b>'+tag(r)+'<span class="sv_">'+esc((r.s||[]).join(' · '))+'</span></span><span class="dt">'+esc(day(r.at))+'</span><span class="stt '+(r.st==='new'?'new':'')+'">'+esc(ST[r.st]||'')+'</span></button>').join(''):'<p class="emp_">아직 들어온 문의가 없습니다.</p>')+'</div>'+
+(d?'<aside class="add" id="add"><span class="lab">Detail</span><h3>'+esc(d.b||d.n||'(이름 없음)')+tag(d)+'</h3><dl><dt>담당자</dt><dd>'+esc(d.n)+(d.r?' ('+esc(d.r)+')':'')+'</dd><dt>연락처</dt><dd>'+esc(d.t)+'</dd><dt>이메일</dt><dd>'+esc(d.e)+'</dd><dt>관심 서비스</dt><dd>'+esc((d.s||[]).join(' · '))+'</dd><dt>접수 시각</dt><dd>'+esc(tm(d.at))+'</dd><dt>상태</dt><dd>'+esc(ST[d.st]||'')+'</dd></dl><p class="m_">'+esc(d.m)+'</p><div class="acts">'+['ing','done','new'].filter(k=>k!==d.st).map((k,i)=>'<button type="button" class="btn '+(i?'o':'f')+'" data-st="'+k+'">'+(k==='ing'?'상담 중으로 변경':k==='done'?'완료 처리':'새 문의로 변경')+'</button>').join('')+'</div><button type="button" class="del_" id="ad-del">이 문의 삭제</button></aside>':'')+'</div>';}
+function act(b){if(busy)return;busy=true;api(b).then(j=>{busy=false;if(j.ok){rows=j.rows;draw();}else go();}).catch(()=>{busy=false;});}
+box.addEventListener('click',e=>{const t=e.target,f=t.closest('[data-f]'),r=t.closest('#adt [data-id]'),s=t.closest('[data-st]');
+if(f){flt=f.dataset.f;draw();}else if(r){sel=r.dataset.id;draw();}else if(s){act({a:'set',id:sel,st:s.dataset.st});}
+else if(t.closest('#ad-del')){if(confirm('이 문의를 삭제할까요? 삭제하면 되돌릴 수 없습니다.'))act({a:'del',id:sel});}
+else if(t.closest('#ad-out')){api({a:'logout'}).then(go).catch(go);}});
+function go(){if((location.hash||'').slice(1).split('/')[0]!=='admin')return;api({a:'status'}).then(j=>{if(!j.ok){fail();return;}if(j.in)load();else gate(j.set);}).catch(fail);}
+addEventListener('hashchange',go);go();})();
 // reveal
 const io='IntersectionObserver' in window&&!rm?new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){cls(e.target,'sn',true);io.unobserve(e.target);}}),{rootMargin:'0px 0px -8% 0px'}):null;
 function reveal(){if(!io)return;$$(`.page[data-page="${page}"] :is(.sh,.st h2,.st .row,.acc,.pr,.fq,.rail,.tl,.fun,.two,.tm,.wall,.vis,.wg .wc,.cta h2,.car,.gal .slot,.its)`).forEach(el=>{if(!el.classList.contains('rv_')){cls(el,'rv_',true);io.observe(el);}});}
