@@ -977,7 +977,7 @@ const hd=$('#hd'),cur=$('#cur'),mm=$('#mm'),ham=$('#ham');
 const rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
 const cls=(el,c,on)=>el.classList.toggle(c,!!on);
 // logos
-$$('.tr').forEach(t=>{const H=Math.ceil(LOGOS.length/2);const half=+t.dataset.l?LOGOS.slice(H):LOGOS.slice(0,H);const h=half.map(l=>`<img${l[0]==="멘소래담"?' class="tl"':""} src="${l[1]}" alt="${l[0]}" loading="lazy">`).join('');t.innerHTML=h+h.replace(/alt="[^"]*"/g,'alt=""');});
+$$('.tr').forEach(t=>{const H=Math.ceil(LOGOS.length/2);const half=+t.dataset.l?LOGOS.slice(H):LOGOS.slice(0,H);const h=half.map(l=>`<img${l[0]==="멘소래담"?' class="tl"':""} src="${l[1]}" alt="${l[0]}">`).join('');t.innerHTML=h+h.replace(/alt="[^"]*"/g,'alt=""');});
 $('#wall').innerHTML=LOGOS.map(l=>`<div><img${l[0]==="멘소래담"?' class="tl"':""} src="${l[1]}" alt="${l[0]}" loading="lazy"></div>`).join('');
 // header state
 let page='home';
