@@ -600,32 +600,40 @@ svg.li{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.5;str
 .nums.pf dd{font-size:clamp(64px,7.9vw,124px);font-variant-numeric:tabular-nums}
 .nums dd i.u{font-family:var(--kr);font-size:.36em;font-weight:700;letter-spacing:-.02em;color:var(--k);margin-left:.14em}
 .nums dd b{font-weight:inherit}
-.pf .gr{position:relative;margin-top:72px}
-.pf .gr svg{display:block;width:100%;height:300px;overflow:visible}
-.pf .grid line{stroke:var(--line);stroke-width:1;vector-effect:non-scaling-stroke;stroke-dasharray:2 6}
-.pf .ln{fill:none;stroke:var(--k);stroke-width:2.5;vector-effect:non-scaling-stroke;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1}
+.pf .gr{margin-top:76px;background:var(--k);border-radius:28px;padding:92px 72px 34px;color:#fff}
+.pf .ch{position:relative;height:340px}
+.pf .ch svg{display:block;width:100%;height:340px;overflow:visible}
+.pf .grid line{stroke:#2b2b2b;stroke-width:1;vector-effect:non-scaling-stroke;stroke-dasharray:2 7}
+.pf .grid line:last-child{stroke-dasharray:none;stroke:#3a3a3a}
+.pf .ln{fill:none;stroke:url(#gl);stroke-width:3;vector-effect:non-scaling-stroke;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1}
+.pf .ln.gw{stroke:#fff;stroke-width:14;opacity:.13;filter:blur(7px)}
 .pf .ar{fill:url(#ga);clip-path:inset(0 100% 0 0)}
-.pf .dot{position:absolute;right:-7px;width:14px;height:14px;border-radius:50%;background:var(--k);transform:scale(0);box-shadow:0 0 0 0 rgba(10,10,10,.28)}
-.pf .ax{display:flex;justify-content:space-between;margin-top:18px;padding-top:16px;border-top:1px solid var(--line);font-family:var(--en);font-size:13px;font-weight:500;letter-spacing:.16em;color:var(--g)}
+.pf .pts i{position:absolute;width:9px;height:9px;margin:-4.5px 0 0 -4.5px;border-radius:50%;background:var(--k);border:2px solid #fff;box-sizing:border-box;transform:scale(0)}
+.pf .pts i.e{width:16px;height:16px;margin:-8px 0 0 -8px;background:#fff;border:0}
+.pf .tip{position:absolute;right:0;transform:translate(8px,10px);opacity:0;background:#fff;color:var(--k);font-family:var(--en);font-weight:600;font-size:20px;line-height:1;letter-spacing:-.02em;padding:11px 18px 12px;border-radius:99px;white-space:nowrap}
+.pf .tip i{font-style:normal;font-weight:400;color:var(--g);margin-left:.06em}
+.pf .tip:after{content:"";position:absolute;right:15px;bottom:-5px;width:11px;height:11px;background:#fff;transform:rotate(45deg);border-radius:2px}
+.pf .ax{display:flex;justify-content:space-between;margin:22px -18px 0;font-family:var(--en);font-size:13px;font-weight:500;letter-spacing:.16em;color:#8a8a8a}
+.pf .ax span{width:36px;text-align:center;margin:0 0}
 .pf dl div{opacity:0;transform:translateY(22px)}
 .pf.on dl div{opacity:1;transform:none;transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
 .pf.on dl div:nth-child(2){transition-delay:.12s}.pf.on dl div:nth-child(3){transition-delay:.24s}
 .pf.on .ln{stroke-dashoffset:0;transition:stroke-dashoffset 2.2s cubic-bezier(.45,.05,.2,1) .25s}
 .pf.on .ar{clip-path:inset(0 0 0 0);transition:clip-path 2.2s cubic-bezier(.45,.05,.2,1) .25s}
-.pf.on .dot{transform:scale(1);transition:transform .45s cubic-bezier(.3,1.6,.5,1) 2.35s;animation:pfp 2.4s ease-out 2.9s infinite}
-@keyframes pfp{0%{box-shadow:0 0 0 0 rgba(10,10,10,.28)}70%,100%{box-shadow:0 0 0 18px rgba(10,10,10,0)}}
-@media (prefers-reduced-motion:reduce){.pf dl div{opacity:1;transform:none}.pf .ln{stroke-dashoffset:0}.pf .ar{clip-path:none}.pf .dot{transform:scale(1);animation:none}}
+.pf.on .pts i{transform:scale(1);transition:transform .45s cubic-bezier(.3,1.6,.5,1)}.pf.on .pts i.e{animation:pfp 2.4s ease-out 3s infinite}.pf.on .tip{opacity:1;transform:translate(8px,0);transition:opacity .5s ease 2.5s,transform .6s cubic-bezier(.2,.7,.2,1) 2.5s}
+@keyframes pfp{0%{box-shadow:0 0 0 0 rgba(255,255,255,.4)}70%,100%{box-shadow:0 0 0 20px rgba(255,255,255,0)}}
+@media (prefers-reduced-motion:reduce){.pf dl div{opacity:1;transform:none}.pf .ln{stroke-dashoffset:0}.pf .ar{clip-path:none}.pf .pts i{transform:scale(1);animation:none!important}.pf .tip{opacity:1;transform:translate(8px,0)}}
 .mkh{max-width:1360px;margin:0 auto;padding:36px 40px 0;font-family:var(--kr)}.mkh h1{font-size:22px;margin:0 0 4px;font-weight:700}.mkh p{margin:0;color:#666;font-size:14px}
 .mkt{max-width:1360px;margin:0 auto;padding:44px 40px 0;display:flex;gap:12px;align-items:center}.mkt span{padding:6px 16px;border-radius:99px;background:#0a0a0a;color:#fff;font-size:14px;font-weight:700}.mkt button{padding:6px 16px;border-radius:99px;border:1px solid #0a0a0a;background:#fff;font:inherit;font-size:14px;cursor:pointer}
 .nums{padding-block:44px 0!important}.mke{height:140px}</style></head><body><div class="mkh"><h1>숫자 그래프 시안</h1><p>메인 Works 아래 숫자 구역입니다. 숫자가 0부터 올라가고 선이 왼쪽에서 오른쪽으로 그려집니다.</p></div><div class="mkt"><span>변경</span><button onclick="pfRun()">움직임 다시 보기</button></div><section class="w nums pf" id="pf"><dl><div><dt>Since</dt><dd>2022</dd><p>2022년 8월 설립</p></div><div><dt>Clients</dt><dd><b data-n="236">236</b><i>+</i></dd><p>함께한 브랜드</p></div><div><dt>Billings</dt><dd><b data-n="55">55</b><i class="u">억</i><i>+</i></dd><p>누적 취급액</p></div></dl>
-<div class="gr"><svg viewBox="0 0 1280 300" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="ga" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0a0a0a" stop-opacity=".13"/><stop offset="1" stop-color="#0a0a0a" stop-opacity="0"/></linearGradient></defs>
-<g class="grid"><line x1="0" y1="75" x2="1280" y2="75"/><line x1="0" y1="150" x2="1280" y2="150"/><line x1="0" y1="225" x2="1280" y2="225"/></g>
-<path class="ar" d=""/><path class="ln" d="" pathLength="1"/></svg><span class="dot"></span><div class="ax"><span>2022</span><span>2026</span></div></div></section><div class="mkt" style="padding-top:110px"><span style="background:#767676">현재</span></div><section class="w nums"><dl><div><dt>Since</dt><dd>2022</dd><p>2022년 8월 설립</p></div><div><dt>Clients</dt><dd>236<i>+</i></dd><p>함께한 브랜드</p></div></dl></section><div class="mke"></div><script>
+<div class="gr"><div class="ch"><svg viewBox="0 0 1280 340" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="ga" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".26"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient><linearGradient id="gl" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity=".35"/><stop offset=".55" stop-color="#fff"/></linearGradient></defs>
+<g class="grid"><line x1="0" y1="85" x2="1280" y2="85"/><line x1="0" y1="170" x2="1280" y2="170"/><line x1="0" y1="255" x2="1280" y2="255"/><line x1="0" y1="340" x2="1280" y2="340"/></g>
+<path class="ar" d=""/><path class="ln gw" d="" pathLength="1"/><path class="ln" d="" pathLength="1"/></svg><div class="pts"></div><span class="tip">55억<i>+</i></span></div><div class="ax"><span>2022</span><span>2023</span><span>2024</span><span>2025</span><span>2026</span></div></div></section><div class="mkt" style="padding-top:110px"><span style="background:#767676">현재</span></div><section class="w nums"><dl><div><dt>Since</dt><dd>2022</dd><p>2022년 8월 설립</p></div><div><dt>Clients</dt><dd>236<i>+</i></dd><p>함께한 브랜드</p></div></dl></section><div class="mke"></div><script>
 (function(){var el=document.getElementById('pf');if(!el)return;
-var P=[[0,278],[150,262],[300,268],[450,228],[600,214],[750,168],[900,150],[1050,92],[1180,58],[1280,22]];
+var P=[[0,304],[160,292],[320,270],[480,256],[640,218],[800,190],[960,140],[1120,96],[1280,30]];
 function sm(p){var d='M'+p[0][0]+' '+p[0][1];for(var i=0;i<p.length-1;i++){var a=p[i-1]||p[i],b=p[i],c=p[i+1],e=p[i+2]||c;d+=' C'+(b[0]+(c[0]-a[0])/6)+' '+(b[1]+(c[1]-a[1])/6)+' '+(c[0]-(e[0]-b[0])/6)+' '+(c[1]-(e[1]-b[1])/6)+' '+c[0]+' '+c[1]}return d}
-var d=sm(P);el.querySelector('.ln').setAttribute('d',d);el.querySelector('.ar').setAttribute('d',d+' L1280 300 L0 300 Z');
-el.querySelector('.dot').style.top=(P[P.length-1][1]-7)+'px';
+var d=sm(P);[].forEach.call(el.querySelectorAll('.ln'),function(n){n.setAttribute('d',d)});el.querySelector('.ar').setAttribute('d',d+' L1280 340 L0 340 Z');
+var ps=el.querySelector('.pts');[0,2,4,6,8].forEach(function(i,k){var o=document.createElement('i');if(k==4)o.className='e';o.style.left=(P[i][0]/12.8)+'%';o.style.top=P[i][1]+'px';o.style.transitionDelay=(.3+k*.5)+'s';ps.appendChild(o)});el.querySelector('.tip').style.bottom=(340-P[8][1]+24)+'px';
 var nums=[].slice.call(el.querySelectorAll('b[data-n]'));
 function run(){el.classList.add('on');if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;var t0=performance.now(),D=2200;nums.forEach(function(n){n.textContent='0'});
 (function f(t){var k=Math.min(1,Math.max(0,(t-t0-250)/D)),e=1-Math.pow(1-k,3);nums.forEach(function(n){n.textContent=Math.round(+n.dataset.n*e)});if(k<1)requestAnimationFrame(f)})(t0)}
